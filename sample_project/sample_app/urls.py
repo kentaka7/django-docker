@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 
+router = routers.DefaultRouter()
 router.register(r'memo', views.MemoViewSet)
