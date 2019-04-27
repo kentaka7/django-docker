@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  sample_project:
+    build: ./sample_project
+    working_dir: /code
+    volumes:
+        - ./sample_project:/code
+    ports:
+        - "8000:8000"
+    command: >
+      bash -c "python manage.py makemigrations &&
+               python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000 &&
+               python manage.py shell -c 'from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@localhost', 'admin')'"
