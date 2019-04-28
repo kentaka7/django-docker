@@ -2,8 +2,7 @@
 
 ## usage
 ```
-$ git clone
-$ https://github.com/mykysyk/django-docker.git
+$ git clone https://github.com/mykysyk/django-docker.git
 $ cd django-docker
 $ docker-compose up -d
 $ docker-compose run sample_project python manage.py createsuperuser
